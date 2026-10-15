@@ -1,0 +1,172 @@
+import { 
+  Paintbrush, Home, Shield, Droplets, HardHat, Hammer, Construction, Layout,
+  Wrench, Brush, Trees, Waves, Sun, Moon, Star, Heart, Smile, Info, Phone, Mail, Globe,
+  Zap, Settings, MapPin, User, Camera, Image, CheckCircle2, Lock, Unlock, 
+  Package, Truck, Pencil, Ruler, Shovel, Lightbulb, Warehouse, Palette, 
+  Crop, Component, Compass, Briefcase, CircleDollarSign, CreditCard, 
+  TrendingUp, BarChart3, PieChart, Target, Users, UserCheck, Contact, 
+  Bell, Calendar, Clock, Link, Share2, Check, XCircle, AlertTriangle, 
+  ThumbsUp, Coffee, Wifi, Gift, Trash2, Map, Send, MessageSquare, 
+  Monitor, Smartphone, Scissors, PenTool, Eraser, Layers, MousePointer2, 
+  Hand, Move, ZoomIn, ZoomOut, Maximize2, Minimize2, RefreshCw, 
+  Cloud, CloudRain, Snowflake, Wind, Thermometer, Battery, Bluetooth, 
+  Cpu, Database, HardDrive, Headphones, Mic, Music, Speaker, 
+  Video, Webcam, Tv, Laptop, Tablet, Watch, HeartPulse, 
+  Activity, Stethoscope, Microscope, TestTube2, Brain, FlaskConical, 
+  Dna, Atom, Rocket, Plane, Car, Bike, Anchor, Ship, Train
+} from 'lucide-react';
+
+export type SectionType = 'hero' | 'estimate' | 'services' | 'portfolio' | 'reviews' | 'about' | 'footer' | 'header';
+export type VariantType = 1 | 2 | 3;
+export type BuilderTab = 'Headers' | 'Footers' | 'Blocks' | 'Branding';
+
+export interface PageSection {
+    id: string;
+    type: SectionType;
+    variant: VariantType;
+    content: any;
+}
+
+export interface BrandingConfig {
+    primaryColor: string;
+    headingFont: string;
+    bodyFont: string;
+}
+
+export const AVAILABLE_ICONS = [
+    { name: 'Paintbrush', icon: Paintbrush },
+    { name: 'Brush', icon: Brush },
+    { name: 'Home', icon: Home },
+    { name: 'Shield', icon: Shield },
+    { name: 'Droplets', icon: Droplets },
+    { name: 'HardHat', icon: HardHat },
+    { name: 'Hammer', icon: Hammer },
+    { name: 'Construction', icon: Construction },
+    { name: 'Wrench', icon: Wrench },
+    { name: 'Pencil', icon: Pencil },
+    { name: 'Ruler', icon: Ruler },
+    { name: 'Shovel', icon: Shovel },
+    { name: 'Lightbulb', icon: Lightbulb },
+    { name: 'Warehouse', icon: Warehouse },
+    { name: 'Palette', icon: Palette },
+    { name: 'Layers', icon: Layout },
+    { name: 'Crop', icon: Crop },
+    { name: 'Component', icon: Component },
+    { name: 'Compass', icon: Compass },
+    { name: 'Briefcase', icon: Briefcase },
+    { name: 'Dollar', icon: CircleDollarSign },
+    { name: 'Credit Card', icon: CreditCard },
+    { name: 'Trending Up', icon: TrendingUp },
+    { name: 'Bar Chart', icon: BarChart3 },
+    { name: 'Pie Chart', icon: PieChart },
+    { name: 'Target', icon: Target },
+    { name: 'Users', icon: Users },
+    { name: 'User Check', icon: UserCheck },
+    { name: 'Contact', icon: Contact },
+    { name: 'User', icon: User },
+    { name: 'Bell', icon: Bell },
+    { name: 'Calendar', icon: Calendar },
+    { name: 'Clock', icon: Clock },
+    { name: 'Link', icon: Link },
+    { name: 'Share', icon: Share2 },
+    { name: 'Mail', icon: Mail },
+    { name: 'Phone', icon: Phone },
+    { name: 'Message', icon: MessageSquare },
+    { name: 'Send', icon: Send },
+    { name: 'Map Pin', icon: MapPin },
+    { name: 'Map', icon: Map },
+    { name: 'Globe', icon: Globe },
+    { name: 'Check', icon: Check },
+    { name: 'Check Circle', icon: CheckCircle2 },
+    { name: 'X Circle', icon: XCircle },
+    { name: 'Alert', icon: AlertTriangle },
+    { name: 'Info', icon: Info },
+    { name: 'Thumbs Up', icon: ThumbsUp },
+    { name: 'Heart', icon: Heart },
+    { name: 'Star', icon: Star },
+    { name: 'Smile', icon: Smile },
+    { name: 'Coffee', icon: Coffee },
+    { name: 'Wifi', icon: Wifi },
+    { name: 'Zap', icon: Zap },
+    { name: 'Gift', icon: Gift },
+    { name: 'Package', icon: Package },
+    { name: 'Truck', icon: Truck },
+    { name: 'Trash', icon: Trash2 },
+    { name: 'Settings', icon: Settings },
+    { name: 'Camera', icon: Camera },
+    { name: 'Image', icon: Image },
+    { name: 'Lock', icon: Lock },
+    { name: 'Unlock', icon: Unlock },
+    { name: 'Trees', icon: Trees },
+    { name: 'Waves', icon: Waves },
+    { name: 'Sun', icon: Sun },
+    { name: 'Moon', icon: Moon },
+    { name: 'Monitor', icon: Monitor },
+    { name: 'Smartphone', icon: Smartphone },
+    { name: 'Scissors', icon: Scissors },
+    { name: 'Pen Tool', icon: PenTool },
+    { name: 'Eraser', icon: Eraser },
+    { name: 'Mouse Pointer', icon: MousePointer2 },
+    { name: 'Hand', icon: Hand },
+    { name: 'Move', icon: Move },
+    { name: 'Zoom In', icon: ZoomIn },
+    { name: 'Zoom Out', icon: ZoomOut },
+    { name: 'Maximize', icon: Maximize2 },
+    { name: 'Minimize', icon: Minimize2 },
+    { name: 'Refresh', icon: RefreshCw },
+    { name: 'Cloud', icon: Cloud },
+    { name: 'Rain', icon: CloudRain },
+    { name: 'Snowflake', icon: Snowflake },
+    { name: 'Wind', icon: Wind },
+    { name: 'Thermometer', icon: Thermometer },
+    { name: 'Battery', icon: Battery },
+    { name: 'Bluetooth', icon: Bluetooth },
+    { name: 'Cpu', icon: Cpu },
+    { name: 'Database', icon: Database },
+    { name: 'Hard Drive', icon: HardDrive },
+    { name: 'Headphones', icon: Headphones },
+    { name: 'Microphone', icon: Mic },
+    { name: 'Music', icon: Music },
+    { name: 'Speaker', icon: Speaker },
+    { name: 'Video', icon: Video },
+    { name: 'Webcam', icon: Webcam },
+    { name: 'Rocket', icon: Rocket },
+    { name: 'Plane', icon: Plane },
+    { name: 'Car', icon: Car },
+    { name: 'Bike', icon: Bike },
+    { name: 'Anchor', icon: Anchor },
+    { name: 'Ship', icon: Ship },
+    { name: 'Train', icon: Train }
+];
+
+export const BRAND_COLORS = [
+    { name: 'Royal Blue', value: '#2563eb' },
+    { name: 'Emerald', value: '#10b981' },
+    { name: 'Slate', value: '#334155' },
+    { name: 'Rose', value: '#e11d48' },
+    { name: 'Amber', value: '#d97706' },
+    { name: 'Indigo', value: '#4f46e5' },
+    { name: 'Violet', value: '#7c3aed' },
+    { name: 'Ebony', value: '#111827' },
+];
+
+export const HEADING_FONTS = [
+    { name: 'Manrope (Modern)', value: "'Manrope', sans-serif" },
+    { name: 'Montserrat (Bold)', value: "'Montserrat', sans-serif" },
+    { name: 'Playfair (Elegant)', value: "'Playfair Display', serif" },
+    { name: 'Inter (Clean)', value: "'Inter', sans-serif" },
+    { name: 'Lexend (Soft)', value: "'Lexend', sans-serif" },
+    { name: 'Syne (Avant-Garde)', value: "'Syne', sans-serif" },
+    { name: 'Space Grotesk (Tech)', value: "'Space Grotesk', sans-serif" },
+    { name: 'Outfit (Sleek)', value: "'Outfit', sans-serif" },
+];
+
+export const BODY_FONTS = [
+    { name: 'Roboto', value: "'Roboto', sans-serif" },
+    { name: 'Inter', value: "'Inter', sans-serif" },
+    { name: 'Open Sans', value: "'Open Sans', sans-serif" },
+    { name: 'Lato', value: "'Lato', sans-serif" },
+    { name: 'Karla (Classic)', value: "'Karla', sans-serif" },
+    { name: 'Poppins (Round)', value: "'Poppins', sans-serif" },
+    { name: 'Source Sans Pro', value: "'Source Sans Pro', sans-serif" },
+];

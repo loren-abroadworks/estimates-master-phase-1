@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estimate Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+              heading: ['Manrope', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb', // Royal Blue
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+                DEFAULT: '#2563eb'
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body { 
+        font-family: 'Roboto', sans-serif; 
+        background-color: #f3f4f6; 
+      }
+      
+      /* Dark mode body override via CSS variable if needed, but Tailwind class on parent usually suffices */
+      .dark body {
+        background-color: #111827;
+        color: #f9fafb;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Manrope', sans-serif;
+      }
+
+      /* Scrollbars — every scrollable container app-wide (the .custom-scrollbar class
+         remains in markup but is no longer required for the styling). The thumb keeps
+         its inset via a transparent border + background-clip, so it works on any
+         background color. */
+      *::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+      }
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      *::-webkit-scrollbar-thumb {
+        background: #6b7280; /* Gray 500 */
+        border-radius: 10px;
+        border: 2px solid transparent; /* Padding effect */
+        background-clip: padding-box;
+      }
+      *::-webkit-scrollbar-thumb:hover {
+        background: #4b5563; /* Gray 600 on hover */
+        background-clip: padding-box;
+      }
+
+      /* Dark Mode Scrollbar */
+      .dark *::-webkit-scrollbar-thumb {
+        background: #6b7280;
+        background-clip: padding-box;
+      }
+      .dark *::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
+        background-clip: padding-box;
+      }
+
+      /* Firefox scrollbar */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #6b7280 transparent;
+      }
+
+      /* Utility to hide scrollbar but allow scrolling */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+
+      /* Hide number input arrows/spinners */
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+      /* Leads pipeline: committed stage rails, load-bearing counts */
+      #leads-pipeline-board .stage-header.border-blue-200   { border-color: #2563eb; }
+      #leads-pipeline-board .stage-header.border-purple-200 { border-color: #7e22ce; }
+      #leads-pipeline-board .stage-header.border-amber-200  { border-color: #b45309; }
+      #leads-pipeline-board .stage-header.border-green-200  { border-color: #15803d; }
+      #leads-pipeline-board .stage-header.border-red-200    { border-color: #dc2626; }
+      #leads-pipeline-board .stage-header.border-indigo-200 { border-color: #4338ca; }
+      #leads-pipeline-board .stage-header.border-gray-200   { border-color: #374151; }
+
+      #leads-pipeline-board .stage-count {
+        font-family: 'Manrope', 'Roboto', sans-serif;
+        font-size: 0.9375rem;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        padding: 0.375rem 0.625rem;
+        min-width: 1.875rem;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+      }
+      #leads-pipeline-board .stage-count.text-blue-700   { background-color: #2563eb; color: #ffffff; }
+      #leads-pipeline-board .stage-count.text-purple-700 { background-color: #7e22ce; color: #ffffff; }
+      #leads-pipeline-board .stage-count.text-amber-700  { background-color: #b45309; color: #ffffff; }
+      #leads-pipeline-board .stage-count.text-green-700  { background-color: #15803d; color: #ffffff; }
+      #leads-pipeline-board .stage-count.text-red-700    { background-color: #dc2626; color: #ffffff; }
+      #leads-pipeline-board .stage-count.text-indigo-700 { background-color: #4338ca; color: #ffffff; }
+      #leads-pipeline-board .stage-count.text-gray-700   { background-color: #374151; color: #ffffff; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
